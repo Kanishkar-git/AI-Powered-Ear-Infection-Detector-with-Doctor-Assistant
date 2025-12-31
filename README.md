@@ -1,112 +1,194 @@
+Below is a **complete, clean, GitHub-ready `README.md`** tailored **exactly to your project and code**.
+You can **copy–paste this directly** into `README.md` in your repo.
+
+---
+
 # 👂 AI ENT Doctor Assistant
 
-A comprehensive AI-powered medical application for ear infection detection and consultation, combining computer vision, advanced language models, and medical expertise.
+An advanced **AI-powered medical web application** for **ear infection detection, clinical analysis, and virtual ENT consultation**, built using **Computer Vision, Google Gemini, LangChain, and Streamlit**.
 
-## 🌟 Features
+> ⚠️ **Disclaimer**: This system is designed for **clinical support and educational purposes only**. It does **not provide medical diagnoses** and must not replace consultation with a certified ENT specialist.
 
-- **🔬 AI-Powered Detection**: Hospital-grade ear infection detection using Roboflow CV
-- **👨‍⚕️ Virtual ENT Consultation**: Interactive chat with AI ENT specialist Dr. Sarah Chen
-- **📊 Visual Analytics**: Comprehensive charts and medical insights
-- **📋 PDF Reports**: Professional medical reports with patient data
-- **💬 Context-Aware Chat**: LangChain-powered conversational AI with medical context
+---
+
+## 🌟 Key Features
+
+### 🔬 AI-Powered Ear Infection Detection
+
+* Uses **hospital-grade computer vision models** via **Roboflow**
+* Detects ear conditions from uploaded otoscope images
+* Highlights affected regions with bounding boxes
+
+### 📊 Clinical Analysis & Visual Insights
+
+* AI-generated medical overview and severity assessment
+* Confidence-based severity classification (Mild / Moderate / High)
+* Interactive charts:
+
+  * Detection confidence gauge
+  * Symptom probability distribution
+  * Infection progression timeline
+  * Visual feature contribution
+  * Prevention effectiveness
+
+### 👨‍⚕️ Virtual ENT Doctor Consultation
+
+* Chat with **Dr. Sarah Chen**, an AI-simulated ENT specialist
+* Powered by **LangChain + Google Gemini**
+* Context-aware responses using detection results
+* Medical-safe rules:
+
+  * No prescriptions
+  * No diagnoses
+  * Clear red-flag escalation guidance
+
+### 📋 Professional PDF Medical Reports
+
+* Auto-generated clinical reports including:
+
+  * Patient details
+  * Detection results
+  * AI analysis summary
+  * Visual evidence
+* Downloadable PDF format using **ReportLab**
+
+---
 
 ## 🏗️ Project Structure
 
 ```
 ai-ent-doctor-assistant/
 ├── app.py                      # Main Streamlit application
-├── requirements.txt            # Dependencies
+├── requirements.txt            # Python dependencies
+├── runtime.txt                 # Python version for deployment
+├── README.md                   # Project documentation
+│
 ├── .streamlit/
-│   └── secrets.toml           # API keys (create this)
+│   └── secrets.toml            # API keys (local / cloud)
+│
 ├── config/
-│   ├── __init__.py
-│   ├── api_config.py          # API configuration
-│   └── prompts.py             # System prompts
+│   ├── api_config.py           # API key handling
+│   └── prompts.py              # Gemini & LangChain prompts
+│
 ├── services/
-│   ├── __init__.py
-│   ├── detection_service.py   # Detection logic
-│   ├── analysis_service.py    # Analysis logic
-│   ├── chatbot_service.py     # Chatbot logic
-│   └── report_service.py      # PDF generation
+│   ├── detection_service.py    # Roboflow detection logic
+│   ├── analysis_service.py     # Gemini medical analysis
+│   ├── chatbot_service.py      # LangChain chatbot logic
+│   └── report_service.py       # PDF report generation
+│
 ├── ui/
-│   ├── __init__.py
-│   ├── styles.py              # CSS styling
-│   └── visualizations.py      # Charts
+│   ├── styles.py               # Custom CSS styles
+│   └── visualizations.py       # Plotly charts
+│
 └── utils/
-    ├── __init__.py
-    ├── image_utils.py         # Image processing
-    ├── parser_utils.py        # Response parsing
-    └── session_utils.py       # Session management
+    ├── image_utils.py          # Image processing helpers
+    ├── parser_utils.py         # Gemini response parsing
+    └── session_utils.py        # Streamlit session state
 ```
 
-## 🚀 Installation
+---
 
-1. **Clone the repository**
+## 🚀 Installation & Setup
+
+### 1️⃣ Clone the Repository
+
 ```bash
-git clone <your-repo-url>
+git clone <your-github-repo-url>
 cd ai-ent-doctor-assistant
 ```
 
-2. **Create virtual environment**
+### 2️⃣ Create Virtual Environment
+
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+source venv/bin/activate      # Linux / macOS
+venv\Scripts\activate         # Windows
 ```
 
-3. **Install dependencies**
+### 3️⃣ Install Dependencies
+
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Configure API keys**
+---
+
+## 🔐 API Configuration
+
+### 📁 Local Development
 
 Create `.streamlit/secrets.toml`:
+
 ```toml
-GEMINI_API_KEY = "your-gemini-api-key"
-ROBOFLOW_API_KEY = "your-roboflow-api-key"
+GEMINI_API_KEY = "your_gemini_api_key"
+ROBOFLOW_API_KEY = "your_roboflow_api_key"
 ```
 
-## 🎯 Usage
+### ☁️ Streamlit Cloud Deployment
 
-1. **Run the application**
+* Go to **Manage App → Secrets**
+* Add the same keys (do NOT commit them to GitHub)
+
+---
+
+## ▶️ Running the Application
+
 ```bash
 streamlit run app.py
 ```
 
-2. **Upload ear image** in the Detection tab
-3. **Review analysis** with charts and insights
-4. **Consult AI doctor** for medical guidance
-5. **Generate PDF report** with all findings
+Then open the URL shown in the terminal.
 
-## 🔧 Configuration
+---
 
-### API Keys
+## 🧪 How to Use
 
-- **Gemini API**: Get from [Google AI Studio](https://makersuite.google.com/app/apikey)
-- **Roboflow API**: Get from [Roboflow](https://roboflow.com/)
+1. **Upload an ear image** (JPG / PNG)
+2. Click **Run Detection**
+3. Review:
 
-### Customization
+   * Detected condition
+   * Confidence score
+   * Clinical insights & charts
+4. Switch to **Consult ENT Doctor**
 
-- **Prompts**: Edit `config/prompts.py`
-- **Styling**: Modify `ui/styles.py`
-- **Charts**: Customize `ui/visualizations.py`
+   * Ask questions about severity, symptoms, next steps
+5. Generate and **download PDF medical report**
 
-## 📦 Dependencies
+---
 
-- `streamlit` - Web interface
-- `pillow` - Image processing
-- `opencv-python` - Computer vision
-- `inference-sdk` - Roboflow integration
-- `google-generativeai` - Gemini AI
-- `langchain` - Conversational AI
-- `reportlab` - PDF generation
-- `plotly` - Interactive charts
+## ⚙️ Configuration & Customization
+
+* **Medical prompts** → `config/prompts.py`
+* **Chat behavior** → `services/chatbot_service.py`
+* **Charts & analytics** → `ui/visualizations.py`
+* **Styling & UI** → `ui/styles.py`
+
+---
+
+## 📦 Core Technologies Used
+
+* **Streamlit** – Web application framework
+* **Roboflow Inference SDK** – Computer vision detection
+* **Google Gemini (google-generativeai)** – Medical AI analysis
+* **LangChain** – Context-aware conversational AI
+* **OpenCV** – Image processing
+* **Plotly** – Interactive data visualizations
+* **ReportLab** – PDF report generation
+
+---
 
 ## ⚠️ Medical Disclaimer
 
-This application is for educational and clinical support purposes only. It does NOT provide medical diagnosis and should not replace consultation with qualified healthcare professionals.
+This application is **not a diagnostic tool**.
+All outputs are **AI-generated clinical support insights** and must be reviewed by a **qualified ENT specialist** before any medical decision is made.
 
+---
 
-- Roboflow for computer vision infrastructure
-- Google for Gemini AI models
-- LangChain for conversational AI framework
+## 🙌 Acknowledgements
+
+* **Roboflow** – Computer vision infrastructure
+* **Google Gemini** – Large language models
+* **LangChain** – Conversational AI framework
+* **Streamlit** – Rapid ML app deployment
+
