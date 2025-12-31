@@ -1,8 +1,3 @@
-Below is a **complete, clean, GitHub-ready `README.md`** tailored **exactly to your project and code**.
-You can **copy–paste this directly** into `README.md` in your repo.
-
----
-
 # 👂 AI ENT Doctor Assistant
 
 An advanced **AI-powered medical web application** for **ear infection detection, clinical analysis, and virtual ENT consultation**, built using **Computer Vision, Google Gemini, LangChain, and Streamlit**.
@@ -191,4 +186,5 @@ All outputs are **AI-generated clinical support insights** and must be reviewed 
 * **Google Gemini** – Large language models
 * **LangChain** – Conversational AI framework
 * **Streamlit** – Rapid ML app deployment
+
 
