@@ -1,4 +1,4 @@
-# 👂 AI ENT Doctor Assistant
+# 👂 AI-Powered-Ear-Infection-Detector-with-Doctor-Assistant
 
 An advanced **AI-powered medical web application** for **ear infection detection, clinical analysis, and virtual ENT consultation**, built using **Computer Vision, Google Gemini, LangChain, and Streamlit**.
 
@@ -186,5 +186,6 @@ All outputs are **AI-generated clinical support insights** and must be reviewed 
 * **Google Gemini** – Large language models
 * **LangChain** – Conversational AI framework
 * **Streamlit** – Rapid ML app deployment
+
 
 
